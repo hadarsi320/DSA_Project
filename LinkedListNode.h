@@ -20,6 +20,8 @@ public:
     explicit LinkedListNode(T const& data, LinkedListNode<T> * next=NULL, LinkedListNode<T> * prev=NULL) :
             _data(data), _next(next), _prev(next) {}
 
+    ~LinkedListNode() {cout << "removing list node" << endl;}
+
     T const& getData() const { //TODO reference?
         return _data;
     }

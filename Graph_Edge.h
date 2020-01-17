@@ -17,6 +17,11 @@ private:
 public:
     Graph_Edge(const Graph_Node& src, const Graph_Node& dst): _src(src), _dst(dst) {}
 
+
+    //TODO delete destructor
+    ~Graph_Edge() {cout << "graph edge connecting nodes " << _src.Get_key() << " and " << _dst.Get_key() << " deleted"
+    << endl;}
+
     const Graph_Node& getSrc() const
     {
         return _src;

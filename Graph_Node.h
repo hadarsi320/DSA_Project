@@ -17,6 +17,9 @@ private:
 public:
     Graph_Node(unsigned key): _key(key) {}
 
+    //TODO delete destructor
+    ~Graph_Node() { cout << "Graph node " << _key << " deleted" << endl; }
+
     unsigned Get_out_Degree() const
     {
         return _outAdjacencyList.length();

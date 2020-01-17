@@ -111,15 +111,22 @@ size_t LinkedList<T>::length() const {
     return len;
 }
 
+//TODO consider changing it so the data of the removed node is returned
 template<typename T>
 void LinkedList<T>::remove(LinkedListNode<T> *x) {
+    if(x == _head)
+        _head = _head->getNext();
+    if(x == _tail)
+        _tail = _tail->getPrev();
+
     if (x->getPrev() != NULL)
         (x->getPrev())->setNext((x->getNext()));
     if (x->getNext() != NULL)
         (x->getNext())->setPrev((x->getPrev()));
     x->setNext(NULL);
     x->setNext(NULL);
-    cout << "Removing node..." << endl;
+
+    delete(x);
 }
 
 #endif //DSA_PROJECT_LINKEDLIST_H
