@@ -41,7 +41,7 @@ void Queue<T>::enqueue(T const& x) {
 
 template<typename T>
 const T& Queue<T>::dequeue() {
-    T const& data = _list.getTail()->getData();
+    T data = _list.getTail()->getData();
     _list.remove(_list.getTail());
     return data;
 }
